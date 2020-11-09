@@ -1,5 +1,5 @@
 Hello!
-This project was created by Jigyansoo Das
+This project was created by Jigyansoo Das.
 I have used Angular for front-end, Node.js for back-end and AWS S3 and RDS Aurora Database for storing the uploaded images and their descriptions.
 To run the scripts, use the following commands:
   i) To start the Angular script:
