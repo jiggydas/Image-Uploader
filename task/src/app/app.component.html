@@ -1,0 +1,18 @@
+<div class="container">
+  <div style="color: blue; margin-bottom: 20px">
+    <h3>{{title}}</h3>
+  </div>
+  <label>Image upload: </label>
+  <label class="btn btn-default">
+    <input type="file" accept="image/png, image/jpeg" (change)="selectFile($event)">
+  </label><span [hidden]="!showImgError" class="alert alert-danger mt-2">Image Size is too big (>500 KB)</span><br/><br/>
+  <label>Description:
+    <input #desc type="text" name="desc" (change)="changeDesc(desc.value)">
+  </label><span [hidden]="!showDescError" class="alert alert-danger mt-2">Description is empty</span><br/><br/>
+
+  <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+
+
+  <div [hidden]="!successMessage" class="alert alert-success">File uploaded successfully! Please refresh the page to upload another image</div>
+  <div [hidden]="!failureMessage" class="alert alert-danger">File upload failed. Please refresh the page and try again</div>
+</div>
