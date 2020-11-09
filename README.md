@@ -9,7 +9,7 @@ To run the scripts, use the following commands:
   ii) To run the Node.js script:   
     a) Open another terminal   
     b) Go to the directory of the server: cd server   
-    c) Run the command: node server.js   
+    c) Run the command: node server2.js   
   iii) Use config.json to pass your credentials into the node.js script.   
 Now that your project is running, you can go ahead and upload some images.   
 To see the images, go to the AWS S3 console and look inside the specified folder   
