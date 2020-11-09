@@ -116,7 +116,10 @@ var upload = multer({
 //Uploading the incoming image to AWS S3
 app.post('/ping', upload.array('file',1), function (req, res, next) {
     
-    var resmsg = {"msg":'Uploaded!'};
+    var resmsg = {
+      "msg":'Uploaded!',
+      "responseCode":200
+    };
     res.send(resmsg);
 });
 
@@ -139,8 +142,8 @@ app.post('/desc',function(req,res,next){
       var sql = 'INSERT INTO Images.UploadedImages (Description, Size, Type, id) VALUES ?'
       var values = [[desc,size,type,name]];
       con.query(sql,[values], function(err, result, fields) {
-          if (err) res.send(err);
-          if (result) res.send({description: desc, size: size, type: type});
+          if (err) res.send({"responseCode":400});
+          if (result) res.send({description: desc, size: size, type: type,responseCode:200});
           if (fields) console.log(fields);
       });
   });
