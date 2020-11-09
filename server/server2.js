@@ -118,7 +118,7 @@ app.post('/ping', upload.array('file',1), function (req, res, next) {
     
     var resmsg = {
       "msg":'Uploaded!',
-      "responseCode":200
+      "responseCode":201
     };
     res.send(resmsg);
 });
@@ -143,7 +143,7 @@ app.post('/desc',function(req,res,next){
       var values = [[desc,size,type,name]];
       con.query(sql,[values], function(err, result, fields) {
           if (err) res.send({"responseCode":400});
-          if (result) res.send({description: desc, size: size, type: type,responseCode:200});
+          if (result) res.send({description: desc, size: size, type: type,responseCode:201});
           if (fields) console.log(fields);
       });
   });
