@@ -27,8 +27,12 @@ export class AppComponent {
   upload() {
     const file = this.selectedFiles.item(0);
     if (file.size < 500000 && this.desc!='') {
-      this.uploadService.uploadfile(file);
-      this.uploadService.uploadDesc(this.desc,file.size,file.type,file.name);
+      this.uploadService.uploadfile(file).subscribe(response1=>{
+        console.log(response1);
+      });
+      this.uploadService.uploadDesc(this.desc,file.size,file.type,file.name).subscribe(response2=>{
+        console.log(response2);
+      });
       this.showImgError=false;
       this.showDescError=false;
       this.failureMessage=false;
