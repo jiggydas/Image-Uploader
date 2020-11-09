@@ -24,12 +24,10 @@ export class UploadFileService {
     const headers = new HttpHeaders()
     .set('Authorization', 'my-auth-token');
     this.fd.append('file',file,file.name);
-    this.http.post('http://127.0.0.1:8080/ping', this.fd, {
+    return this.http.post('http://127.0.0.1:8080/ping', this.fd, {
       headers: headers
-    })
-    .subscribe(data => {
-      console.log(data);
     });
+
   }
   uploadDesc(desc,size,type,name){
     const headers = new HttpHeaders()
@@ -40,11 +38,9 @@ export class UploadFileService {
       'type':type,
       'name':name
     };
-    this.http.post('http://127.0.0.1:8080/desc',this.data,{
+    return this.http.post('http://127.0.0.1:8080/desc',this.data,{
       headers: headers
-    })
-    .subscribe(data =>{
-      console.log(data);
     });
+
   }
 }
