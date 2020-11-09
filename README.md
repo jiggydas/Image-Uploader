@@ -13,6 +13,8 @@ To run the scripts, use the following commands:
   iii) Use config.json to pass your credentials into the node.js script.   
 Now that your project is running, you can go ahead and upload some images.   
 To see the images, go to the AWS S3 console and look inside the specified folder   
-To see the descriptions in the RDS table, use Postman to send an API request.  
+To see the descriptions in the RDS table, use Postman to send an API request.    
+To run the test file, change package.json to include mocha in it   
+To run the test, navigate to the project directory and type: mocha 
 
  
